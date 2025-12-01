@@ -77,7 +77,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: 'Quality is incredible. These are true artisan candles - you can tell they're made with love and care.',
+    quote: 'Quality is incredible. These are true artisan candles - you can tell they\'re made with love and care.',
     author: 'David R.',
     rating: 5,
   },
