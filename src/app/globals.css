@@ -1,59 +1,74 @@
 @import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/*
+═══════════════════════════════════════════════════════════════════
+  DESIGN SYSTEM - GRANNYS COMMERCIAL CLEANING & LUCKY CHARMA CANDLES
+  Based on elegant purple/pink romantic aesthetic
+═══════════════════════════════════════════════════════════════════
 */
 
 :root {
-  /* Pure white background with crisp black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  /* Primary Purple Theme - Trust & Professionalism */
+  --background: 40 25% 95%;           /* Cream white: #F5F3F0 */
+  --foreground: 280 35% 18%;          /* Dark purple text: #2D1B3D */
 
-  /* Clean white cards with black text */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  /* Card system with soft purple accents */
+  --card: 0 0% 100%;                  /* Pure white: #FFFFFF */
+  --card-foreground: 280 35% 18%;     /* Dark purple text */
 
-  /* Popovers with white background */
+  /* Popovers */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  --popover-foreground: 280 35% 18%;
 
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
-  --primary-foreground: 0 0% 100%;
+  /* Primary: Deep Purple (Cleaning Business) */
+  --primary: 280 24% 45%;             /* #6B4C7A */
+  --primary-foreground: 0 0% 100%;    /* White */
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondary: Rose Pink (Candle Business) */
+  --secondary: 340 35% 75%;           /* #D4A5B8 */
+  --secondary-foreground: 280 35% 18%;
 
-  /* Muted: Subtle gray with darker text */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  /* Muted: Light Purple backgrounds */
+  --muted: 280 20% 78%;               /* #C8B4D4 */
+  --muted-foreground: 280 28% 35%;    /* #4A3355 */
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Accent: Pink Gradient */
+  --accent: 340 45% 85%;              /* #E8C5D9 */
+  --accent-foreground: 280 35% 18%;
 
-  /* Destructive: Clean red */
+  /* Destructive: Soft red */
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  /* Borders: Light purple */
+  --border: 280 20% 85%;
+  --input: 280 20% 85%;
+  --ring: 280 24% 45%;
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Rounded corners matching design */
+  --radius: 0.5rem;
 
-  /* Sidebar: Clean white with black text */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  /* Sidebar */
+  --sidebar-background: 280 24% 45%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 340 35% 75%;
+  --sidebar-primary-foreground: 280 35% 18%;
+  --sidebar-accent: 280 20% 78%;
+  --sidebar-accent-foreground: 280 35% 18%;
+  --sidebar-border: 280 20% 85%;
+  --sidebar-ring: 340 35% 75%;
+
+  /* Custom properties for design system */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Gradient definitions */
+  --gradient-hero: linear-gradient(135deg, hsl(280, 20%, 78%) 0%, hsl(340, 45%, 85%) 100%);
+  --gradient-purple: linear-gradient(135deg, hsl(280, 20%, 78%) 0%, hsl(280, 24%, 45%) 100%);
+  --gradient-pink: linear-gradient(135deg, hsl(340, 45%, 85%) 0%, hsl(340, 35%, 75%) 100%);
 }
 
 .dark {
@@ -168,36 +183,169 @@ All colors MUST be HSL.
   border-color: hsl(var(--border));
 }
 
+/* ═══════════════════════════════════════════════════════════════════
+   TYPOGRAPHY SYSTEM
+   ═══════════════════════════════════════════════════════════════════ */
+
+html {
+  font-size: 16px;
+}
+
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Minimal, clean typography */
+/* Heading styles with elegant serif font */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: hsl(var(--foreground));
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;        /* 48px */
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 2.25rem;     /* 36px */
   font-weight: 600;
   letter-spacing: -0.025em;
-  color: hsl(var(--foreground));
 }
 
-/* Clean button styles */
-button {
+h3 {
+  font-size: 1.75rem;     /* 28px */
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h4 {
+  font-size: 1.375rem;    /* 22px */
   font-weight: 500;
+  letter-spacing: -0.015em;
 }
 
-/* Subtle shadows for depth */
+h5 {
+  font-size: 1.125rem;    /* 18px */
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+h6 {
+  font-size: 1rem;        /* 16px */
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Link styles */
+a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: hsl(var(--secondary));
+}
+
+/* Small text */
+small {
+  font-size: 0.875rem;    /* 14px */
+  line-height: 1.5;
+}
+
+/* Strong text */
+strong {
+  font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   COMPONENT DEFAULTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Button styles */
+button {
+  font-family: var(--font-body);
+  font-weight: 500;
+  border-radius: 24px;
+  padding: 12px 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+/* Input styles */
+input, textarea, select {
+  font-family: var(--font-body);
+  border-radius: 8px;
+  padding: 12px 16px;
+  border: 1px solid hsl(var(--border));
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px rgba(107, 76, 122, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SHADOW SYSTEM (Matching Design Reference)
+   ═══════════════════════════════════════════════════════════════════ */
+
 .shadow-sm {
-  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  box-shadow: 0 2px 8px rgba(107, 76, 122, 0.08);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 4px 12px rgba(107, 76, 122, 0.12);
 }
 
 .shadow-md {
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  box-shadow: 0 8px 24px rgba(107, 76, 122, 0.15);
+}
+
+.shadow-lg {
+  box-shadow: 0 12px 32px rgba(107, 76, 122, 0.2);
+}
+
+.shadow-xl {
+  box-shadow: 0 16px 48px rgba(107, 76, 122, 0.25);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(107, 76, 122, 0.2);
+}
+
+/* Button shadow */
+.button-shadow {
+  box-shadow: 0 4px 12px rgba(107, 76, 122, 0.2);
+}
+
+.button-shadow:hover {
+  box-shadow: 0 6px 16px rgba(107, 76, 122, 0.3);
 }
