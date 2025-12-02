@@ -73,13 +73,13 @@ export function Navigation() {
               </span>
               <span className="absolute inset-0 bg-[hsl(340,45%,95%)] rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300" />
             </Link>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="ml-4 relative overflow-hidden bg-gradient-to-r from-[hsl(280,24%,45%)] to-[hsl(280,24%,50%)] text-light-primary px-8 py-3 rounded-full hover:shadow-[0_8px_20px_rgba(107,76,122,0.4)] transition-all hover:scale-105 font-semibold group"
             >
-              <span className="relative z-10">Get in Touch</span>
+              <span className="relative z-10">Contact</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -127,13 +127,13 @@ export function Navigation() {
                 <Flame className="w-5 h-5" />
                 <span>Handmade Candles</span>
               </Link>
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
                 className="bg-gradient-to-r from-[hsl(280,24%,45%)] to-[hsl(280,24%,50%)] text-light-primary px-6 py-4 rounded-2xl text-center hover:shadow-[0_8px_20px_rgba(107,76,122,0.4)] transition-all font-semibold text-lg mt-2"
               >
-                Get in Touch
-              </a>
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>

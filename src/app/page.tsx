@@ -267,8 +267,8 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="section-spacing px-4 bg-white">
+      {/* Contact Teaser Section */}
+      <section className="section-spacing px-4 bg-white">
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-block mb-4">
             <span className="inline-block px-6 py-2 bg-gradient-to-r from-[hsl(280,20%,95%)] to-[hsl(340,45%,95%)] text-[hsl(280,24%,45%)] rounded-full text-sm font-semibold tracking-wide uppercase">
@@ -278,70 +278,36 @@ export default function Index() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[hsl(280,35%,18%)] mb-6 leading-tight">
             Ready to Get Started?
           </h2>
-          <p className="text-xl md:text-2xl text-[hsl(280,28%,35%)] mb-16 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-[hsl(280,28%,35%)] mb-12 max-w-3xl mx-auto leading-relaxed">
             Whether you need reliable commercial cleaning or beautiful handmade candles,
             we're here to help. Contact us today!
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div className="group relative bg-gradient-to-br from-[hsl(280,20%,95%)] to-[hsl(280,20%,98%)] rounded-3xl p-10 hover:shadow-[0_12px_32px_rgba(107,76,122,0.2)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(280,20%,78%)] to-[hsl(280,24%,45%)] opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+            <a
+              href="tel:5551234567"
+              className="group inline-flex items-center justify-center bg-[hsl(280,24%,45%)] text-light-primary px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(107,76,122,0.4)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
+            >
+              <span>Call Cleaning</span>
+            </a>
 
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-[hsl(280,20%,78%)] to-[hsl(280,24%,45%)] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <Sparkles className="w-8 h-8 text-light-primary" />
-                </div>
-                <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)] mb-3">
-                  Cleaning Services
-                </h3>
-                <p className="text-[hsl(280,28%,35%)] mb-6 text-lg">Get a free quote for your business</p>
-                <div className="space-y-3">
-                  <a
-                    href="tel:5551234567"
-                    className="block text-[hsl(280,24%,45%)] font-semibold text-lg hover:text-[hsl(280,35%,18%)] transition-colors"
-                  >
-                    (555) 123-4567
-                  </a>
-                  <a
-                    href="mailto:cleaning@grannys.com"
-                    className="block text-[hsl(280,24%,45%)] font-semibold hover:text-[hsl(280,35%,18%)] transition-colors"
-                  >
-                    cleaning@grannys.com
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative bg-gradient-to-br from-[hsl(340,45%,95%)] to-[hsl(340,45%,98%)] rounded-3xl p-10 hover:shadow-[0_12px_32px_rgba(212,165,184,0.3)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] opacity-0 group-hover:opacity-5 transition-opacity duration-500" />
-
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <Flame className="w-8 h-8 text-light-primary" />
-                </div>
-                <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)] mb-3">
-                  Candle Orders
-                </h3>
-                <p className="text-[hsl(280,28%,35%)] mb-6 text-lg">Place your custom order today</p>
-                <div className="space-y-3">
-                  <a
-                    href="tel:5557654321"
-                    className="block text-[hsl(340,35%,75%)] font-semibold text-lg hover:text-[hsl(280,35%,18%)] transition-colors"
-                  >
-                    (555) 765-4321
-                  </a>
-                  <a
-                    href="mailto:candles@luckycharma.com"
-                    className="block text-[hsl(340,35%,75%)] font-semibold hover:text-[hsl(280,35%,18%)] transition-colors"
-                  >
-                    candles@luckycharma.com
-                  </a>
-                </div>
-              </div>
-            </div>
+            <a
+              href="tel:5557654321"
+              className="group inline-flex items-center justify-center bg-gradient-to-r from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] text-[hsl(280,35%,18%)] px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(212,165,184,0.5)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
+            >
+              <span>Call Candles</span>
+            </a>
           </div>
 
-          <div className="inline-flex items-center justify-center space-x-3 text-[hsl(280,28%,35%)] bg-[hsl(280,20%,98%)] px-8 py-4 rounded-full text-lg">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center bg-white border-2 border-[hsl(280,24%,45%)] text-[hsl(280,24%,45%)] px-10 py-5 rounded-full hover:bg-[hsl(280,24%,45%)] hover:text-light-primary hover:shadow-[0_8px_20px_rgba(107,76,122,0.3)] transition-all hover:-translate-y-1 font-semibold text-lg group"
+          >
+            <span>View Full Contact Info</span>
+            <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+          </Link>
+
+          <div className="inline-flex items-center justify-center space-x-3 text-[hsl(280,28%,35%)] bg-[hsl(280,20%,98%)] px-8 py-4 rounded-full text-lg mt-12">
             <Clock className="w-5 h-5 text-[hsl(280,24%,45%)]" />
             <span className="font-medium">Available Monday through Sunday, 6 AM - 10 PM</span>
           </div>

@@ -119,6 +119,37 @@ export function Footer() {
                 <Twitter className="w-6 h-6" />
               </a>
             </div>
+
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <div className="space-y-2">
+                <a
+                  href="/"
+                  className="block text-light-secondary hover:text-light-primary transition-colors font-medium"
+                >
+                  Home
+                </a>
+                <a
+                  href="/cleaning"
+                  className="block text-light-secondary hover:text-light-primary transition-colors font-medium"
+                >
+                  Cleaning Services
+                </a>
+                <a
+                  href="/candles"
+                  className="block text-light-secondary hover:text-light-primary transition-colors font-medium"
+                >
+                  Handmade Candles
+                </a>
+                <a
+                  href="/contact"
+                  className="block text-light-secondary hover:text-light-primary transition-colors font-medium"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </div>
+
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 space-y-3">
               <p className="text-light-primary font-semibold text-lg flex items-center space-x-2">
                 <span className="w-2 h-2 bg-[hsl(340,45%,85%)] rounded-full animate-pulse" />
