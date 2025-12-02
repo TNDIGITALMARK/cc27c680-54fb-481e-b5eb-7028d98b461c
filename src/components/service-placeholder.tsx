@@ -32,13 +32,13 @@ export function ServicePlaceholder({
         <Icon
           size={64}
           strokeWidth={1.5}
-          className="text-white opacity-40"
+          className="text-light-primary opacity-40"
         />
       </div>
 
       {/* Service label */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[rgba(107,76,122,0.9)] to-transparent">
-        <p className="text-sm font-medium text-white text-center">
+        <p className="text-sm font-medium text-light-primary text-center">
           {service}
         </p>
       </div>

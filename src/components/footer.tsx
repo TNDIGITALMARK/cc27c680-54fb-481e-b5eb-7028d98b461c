@@ -8,7 +8,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-br from-[hsl(280,24%,45%)] via-[hsl(280,24%,40%)] to-[hsl(280,24%,35%)] text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-br from-[hsl(280,24%,45%)] via-[hsl(280,24%,40%)] to-[hsl(280,24%,35%)] text-light-primary overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[hsl(340,45%,85%)]/10 rounded-full blur-3xl" />
@@ -23,13 +23,13 @@ export function Footer() {
               </div>
               <h3 className="text-2xl font-bold">Grannys Commercial Cleaning</h3>
             </div>
-            <p className="text-white/80 mb-6 leading-relaxed text-lg">
+            <p className="text-light-secondary mb-6 leading-relaxed text-lg">
               Professional commercial cleaning services you can trust. Serving businesses with excellence since day one.
             </p>
             <div className="space-y-3">
               <a
                 href="tel:5551234567"
-                className="flex items-center space-x-3 text-white/90 hover:text-white transition-colors group/link"
+                className="flex items-center space-x-3 text-light-secondary hover:text-light-primary transition-colors group/link"
               >
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover/link:bg-white/20 transition-colors">
                   <Phone className="w-4 h-4" />
@@ -38,14 +38,14 @@ export function Footer() {
               </a>
               <a
                 href="mailto:cleaning@grannys.com"
-                className="flex items-center space-x-3 text-white/90 hover:text-white transition-colors group/link"
+                className="flex items-center space-x-3 text-light-secondary hover:text-light-primary transition-colors group/link"
               >
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover/link:bg-white/20 transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
                 <span className="font-medium">cleaning@grannys.com</span>
               </a>
-              <div className="flex items-center space-x-3 text-white/80">
+              <div className="flex items-center space-x-3 text-light-muted">
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
                   <MapPin className="w-4 h-4" />
                 </div>
@@ -62,13 +62,13 @@ export function Footer() {
               </div>
               <h3 className="text-2xl font-bold">Lucky Charma Handmade Candles</h3>
             </div>
-            <p className="text-white/80 mb-6 leading-relaxed text-lg">
+            <p className="text-light-secondary mb-6 leading-relaxed text-lg">
               Artisan candles crafted with love. Each candle is hand-poured to bring warmth and ambiance to your space.
             </p>
             <div className="space-y-3">
               <a
                 href="tel:5557654321"
-                className="flex items-center space-x-3 text-white/90 hover:text-white transition-colors group/link"
+                className="flex items-center space-x-3 text-light-secondary hover:text-light-primary transition-colors group/link"
               >
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover/link:bg-white/20 transition-colors">
                   <Phone className="w-4 h-4" />
@@ -77,14 +77,14 @@ export function Footer() {
               </a>
               <a
                 href="mailto:candles@luckycharma.com"
-                className="flex items-center space-x-3 text-white/90 hover:text-white transition-colors group/link"
+                className="flex items-center space-x-3 text-light-secondary hover:text-light-primary transition-colors group/link"
               >
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover/link:bg-white/20 transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
                 <span className="font-medium">candles@luckycharma.com</span>
               </a>
-              <div className="flex items-center space-x-3 text-white/80">
+              <div className="flex items-center space-x-3 text-light-muted">
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
                   <MapPin className="w-4 h-4" />
                 </div>
@@ -120,15 +120,15 @@ export function Footer() {
               </a>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 space-y-3">
-              <p className="text-white font-semibold text-lg flex items-center space-x-2">
+              <p className="text-light-primary font-semibold text-lg flex items-center space-x-2">
                 <span className="w-2 h-2 bg-[hsl(340,45%,85%)] rounded-full animate-pulse" />
                 <span>Business Hours</span>
               </p>
-              <p className="text-white/80 leading-relaxed">
-                <strong className="text-white">Cleaning:</strong> Mon-Sun, 6 AM - 10 PM
+              <p className="text-light-muted leading-relaxed">
+                <strong className="text-light-primary">Cleaning:</strong> Mon-Sun, 6 AM - 10 PM
               </p>
-              <p className="text-white/80 leading-relaxed">
-                <strong className="text-white">Candle Orders:</strong> 24/7 Online
+              <p className="text-light-muted leading-relaxed">
+                <strong className="text-light-primary">Candle Orders:</strong> 24/7 Online
               </p>
             </div>
           </div>
@@ -138,10 +138,10 @@ export function Footer() {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
-              <p className="text-white/90 font-medium">
+              <p className="text-light-secondary font-medium">
                 &copy; {new Date().getFullYear()} Grannys Commercial Cleaning & Lucky Charma Handmade Candles
               </p>
-              <p className="text-white/70 mt-1">
+              <p className="text-light-muted mt-1">
                 Two trusted businesses, one family dedication to excellence.
               </p>
             </div>

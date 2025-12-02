@@ -52,7 +52,7 @@ export default function Index() {
             {/* Cleaning */}
             <div className="group flex items-center gap-4 px-8 py-5 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_8px_24px_rgba(107,76,122,0.2)] hover:-translate-y-1">
               <div className="w-14 h-14 bg-gradient-to-br from-[hsl(280,20%,78%)] to-[hsl(280,24%,45%)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Sparkles className="w-7 h-7 text-white" />
+                <Sparkles className="w-7 h-7 text-light-primary" />
               </div>
               <div className="text-left">
                 <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)] mb-1">Commercial Cleaning</h3>
@@ -63,7 +63,7 @@ export default function Index() {
             {/* Candles */}
             <div className="group flex items-center gap-4 px-8 py-5 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_8px_24px_rgba(212,165,184,0.3)] hover:-translate-y-1">
               <div className="w-14 h-14 bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Flame className="w-7 h-7 text-white" />
+                <Flame className="w-7 h-7 text-light-primary" />
               </div>
               <div className="text-left">
                 <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)] mb-1">Handmade Candles</h3>
@@ -76,7 +76,7 @@ export default function Index() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
             <Link
               href="/cleaning"
-              className="group inline-flex items-center justify-center bg-[hsl(280,24%,45%)] text-white px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(107,76,122,0.4)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
+              className="group inline-flex items-center justify-center bg-[hsl(280,24%,45%)] text-light-primary px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(107,76,122,0.4)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
             >
               <span>Explore Cleaning</span>
               <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
@@ -157,7 +157,7 @@ export default function Index() {
                 <div className="relative">
                   <div className="flex justify-center mb-6">
                     <div className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500`}>
-                      <item.icon className="w-8 h-8 text-white" />
+                      <item.icon className="w-8 h-8 text-light-primary" />
                     </div>
                   </div>
                   <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)] mb-3 group-hover:text-[hsl(280,24%,45%)] transition-colors duration-300">
@@ -190,7 +190,7 @@ export default function Index() {
             <div className="group bg-white rounded-3xl p-10 shadow-[0_8px_24px_rgba(107,76,122,0.15)] hover:shadow-[0_20px_48px_rgba(107,76,122,0.25)] transition-all duration-500 hover:-translate-y-2">
               <div className="flex items-center space-x-4 mb-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-[hsl(280,20%,78%)] to-[hsl(280,24%,45%)] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                  <Sparkles className="w-8 h-8 text-white" />
+                  <Sparkles className="w-8 h-8 text-light-primary" />
                 </div>
                 <h2 className="text-4xl font-bold text-[hsl(280,35%,18%)] group-hover:text-[hsl(280,24%,45%)] transition-colors">
                   Commercial Cleaning
@@ -210,7 +210,7 @@ export default function Index() {
                 ].map((service, index) => (
                   <li key={index} className="flex items-center space-x-3 group/item">
                     <div className="w-6 h-6 bg-[hsl(280,20%,95%)] rounded-full flex items-center justify-center group-hover/item:bg-[hsl(280,24%,45%)] transition-colors">
-                      <CheckCircle2 className="w-4 h-4 text-[hsl(280,24%,45%)] group-hover/item:text-white flex-shrink-0 transition-colors" />
+                      <CheckCircle2 className="w-4 h-4 text-[hsl(280,24%,45%)] group-hover/item:text-light-primary flex-shrink-0 transition-colors" />
                     </div>
                     <span className="text-[hsl(280,28%,35%)] font-medium">{service}</span>
                   </li>
@@ -218,7 +218,7 @@ export default function Index() {
               </ul>
               <Link
                 href="/cleaning"
-                className="inline-flex items-center justify-center bg-[hsl(280,24%,45%)] text-white px-10 py-4 rounded-full hover:shadow-[0_8px_20px_rgba(107,76,122,0.4)] transition-all hover:-translate-y-1 font-semibold text-lg group/btn"
+                className="inline-flex items-center justify-center bg-[hsl(280,24%,45%)] text-light-primary px-10 py-4 rounded-full hover:shadow-[0_8px_20px_rgba(107,76,122,0.4)] transition-all hover:-translate-y-1 font-semibold text-lg group/btn"
               >
                 <span>View All Services</span>
                 <span className="ml-2 group-hover/btn:translate-x-1 transition-transform">→</span>
@@ -229,7 +229,7 @@ export default function Index() {
             <div className="group bg-white rounded-3xl p-10 shadow-[0_8px_24px_rgba(107,76,122,0.15)] hover:shadow-[0_20px_48px_rgba(107,76,122,0.25)] transition-all duration-500 hover:-translate-y-2">
               <div className="flex items-center space-x-4 mb-8">
                 <div className="w-16 h-16 bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                  <Flame className="w-8 h-8 text-white" />
+                  <Flame className="w-8 h-8 text-light-primary" />
                 </div>
                 <h2 className="text-4xl font-bold text-[hsl(280,35%,18%)] group-hover:text-[hsl(340,35%,75%)] transition-colors">
                   Handmade Candles
@@ -249,7 +249,7 @@ export default function Index() {
                 ].map((feature, index) => (
                   <li key={index} className="flex items-center space-x-3 group/item">
                     <div className="w-6 h-6 bg-[hsl(340,45%,95%)] rounded-full flex items-center justify-center group-hover/item:bg-[hsl(340,35%,75%)] transition-colors">
-                      <Heart className="w-4 h-4 text-[hsl(340,35%,75%)] group-hover/item:text-white flex-shrink-0 transition-colors" />
+                      <Heart className="w-4 h-4 text-[hsl(340,35%,75%)] group-hover/item:text-light-primary flex-shrink-0 transition-colors" />
                     </div>
                     <span className="text-[hsl(280,28%,35%)] font-medium">{feature}</span>
                   </li>
@@ -289,7 +289,7 @@ export default function Index() {
 
               <div className="relative">
                 <div className="w-16 h-16 bg-gradient-to-br from-[hsl(280,20%,78%)] to-[hsl(280,24%,45%)] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <Sparkles className="w-8 h-8 text-white" />
+                  <Sparkles className="w-8 h-8 text-light-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)] mb-3">
                   Cleaning Services
@@ -317,7 +317,7 @@ export default function Index() {
 
               <div className="relative">
                 <div className="w-16 h-16 bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <Flame className="w-8 h-8 text-white" />
+                  <Flame className="w-8 h-8 text-light-primary" />
                 </div>
                 <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)] mb-3">
                   Candle Orders

@@ -212,7 +212,7 @@ export default function CleaningPage() {
               >
                 <div className="flex justify-center mb-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-[hsl(280,20%,78%)] to-[hsl(280,24%,45%)] rounded-full flex items-center justify-center">
-                    <benefit.icon className="w-8 h-8 text-white" />
+                    <benefit.icon className="w-8 h-8 text-light-primary" />
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-[hsl(280,35%,18%)] mb-2">
@@ -385,7 +385,7 @@ export default function CleaningPage() {
                 />
               </div>
 
-              <button className="w-full bg-[hsl(280,24%,45%)] text-white py-4 rounded-full font-semibold hover:shadow-[0_6px_16px_rgba(107,76,122,0.3)] transition-all hover:-translate-y-0.5">
+              <button className="w-full bg-[hsl(280,24%,45%)] text-light-primary py-4 rounded-full font-semibold hover:shadow-[0_6px_16px_rgba(107,76,122,0.3)] transition-all hover:-translate-y-0.5">
                 Request Free Quote
               </button>
 

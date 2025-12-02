@@ -75,7 +75,7 @@ export function Navigation() {
             </Link>
             <a
               href="#contact"
-              className="ml-4 relative overflow-hidden bg-gradient-to-r from-[hsl(280,24%,45%)] to-[hsl(280,24%,50%)] text-white px-8 py-3 rounded-full hover:shadow-[0_8px_20px_rgba(107,76,122,0.4)] transition-all hover:scale-105 font-semibold group"
+              className="ml-4 relative overflow-hidden bg-gradient-to-r from-[hsl(280,24%,45%)] to-[hsl(280,24%,50%)] text-light-primary px-8 py-3 rounded-full hover:shadow-[0_8px_20px_rgba(107,76,122,0.4)] transition-all hover:scale-105 font-semibold group"
             >
               <span className="relative z-10">Get in Touch</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -130,7 +130,7 @@ export function Navigation() {
               <a
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="bg-gradient-to-r from-[hsl(280,24%,45%)] to-[hsl(280,24%,50%)] text-white px-6 py-4 rounded-2xl text-center hover:shadow-[0_8px_20px_rgba(107,76,122,0.4)] transition-all font-semibold text-lg mt-2"
+                className="bg-gradient-to-r from-[hsl(280,24%,45%)] to-[hsl(280,24%,50%)] text-light-primary px-6 py-4 rounded-2xl text-center hover:shadow-[0_8px_20px_rgba(107,76,122,0.4)] transition-all font-semibold text-lg mt-2"
               >
                 Get in Touch
               </a>

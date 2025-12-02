@@ -112,7 +112,7 @@ export default function CandlesPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#shop"
-                className="bg-[hsl(280,24%,45%)] text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all hover:-translate-y-0.5 text-center"
+                className="bg-[hsl(280,24%,45%)] text-light-primary px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all hover:-translate-y-0.5 text-center"
               >
                 Shop Collection
               </a>
