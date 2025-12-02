@@ -73,7 +73,7 @@ export default function Index() {
           </div>
 
           {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
               href="/cleaning"
               className="group inline-flex items-center justify-center bg-[hsl(280,24%,45%)] text-light-primary px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(107,76,122,0.4)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
@@ -89,14 +89,6 @@ export default function Index() {
               <span>Shop Candles</span>
               <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
             </Link>
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
-            <span className="text-[hsl(280,28%,35%)] text-sm font-medium">Scroll to explore</span>
-            <div className="w-6 h-10 border-2 border-[hsl(280,28%,35%)] rounded-full flex items-start justify-center p-2">
-              <div className="w-1 h-2 bg-[hsl(280,28%,35%)] rounded-full animate-bounce" />
-            </div>
           </div>
         </div>
       </section>
