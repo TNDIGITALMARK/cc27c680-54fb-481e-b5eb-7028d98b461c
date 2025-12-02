@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "Grannys Commercial Cleaning & Lucky Charma Candles | Professional Services",
+  description: "Excellence in every detail. Professional commercial cleaning services and handcrafted artisan candles. Two trusted businesses, one family dedication to quality.",
 };
 
 export default function RootLayout({
