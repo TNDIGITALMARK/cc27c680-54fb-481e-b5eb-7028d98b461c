@@ -1,3 +1,5 @@
+'use client';
+
 import { Sparkles, Flame, Mail, Phone, MapPin, Facebook, Instagram, Twitter, ArrowUp } from 'lucide-react';
 
 export function Footer() {
