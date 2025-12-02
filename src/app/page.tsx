@@ -10,89 +10,92 @@ export default function Index() {
     <div className="min-h-screen flex flex-col">
       <Navigation />
 
-      {/* Hero Section with Gradient Background */}
+      {/* Hero Section with Beautiful Background Image */}
       <section
-        className="relative py-24 md:py-32 lg:py-40 px-4 overflow-hidden animated-gradient"
+        className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, hsl(280, 20%, 78%) 0%, hsl(340, 45%, 85%) 50%, hsl(280, 20%, 78%) 100%)',
+          backgroundImage: 'url(/generated/hero-background.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Decorative overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-white/10" />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(280,35%,18%)]/30 via-[hsl(280,24%,45%)]/20 to-[hsl(340,35%,75%)]/30" />
 
-        {/* Decorative shapes */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-white/10 rounded-full blur-3xl float-animation" style={{ animationDelay: '0s' }} />
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl float-animation" style={{ animationDelay: '1s' }} />
+        {/* Semi-transparent gradient backdrop */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(280,20%,95%)]/70 via-[hsl(280,20%,95%)]/60 to-transparent" />
 
-        <div className="relative max-w-7xl mx-auto text-center fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[hsl(280,35%,18%)] mb-6 leading-tight tracking-tight">
-            Excellence in Every Detail
+        {/* Content */}
+        <div className="relative max-w-7xl mx-auto text-center py-24 md:py-32 fade-in">
+          {/* Main Title */}
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[hsl(280,35%,18%)] mb-8 leading-[1.1] tracking-tight">
+            Excellence in<br />Every Detail
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-[hsl(280,28%,35%)] mb-12 max-w-3xl mx-auto leading-relaxed">
-            From spotless commercial spaces to handcrafted candles,
-            <br className="hidden md:block" />
-            we bring quality and care to everything we do.
+
+          {/* Subtitle */}
+          <p className="text-2xl md:text-3xl lg:text-4xl text-[hsl(280,28%,35%)] mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+            From spotless commercial spaces to handcrafted candles,<br className="hidden md:block" />
+            we bring quality and care to everything we do
           </p>
 
-          {/* Dual Call-to-Action Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16">
-            {/* Cleaning Card */}
+          {/* Divider */}
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <div className="w-16 h-[2px] bg-gradient-to-r from-transparent to-[hsl(280,24%,45%)]" />
+            <Sparkles className="w-6 h-6 text-[hsl(280,24%,45%)]" />
+            <div className="w-16 h-[2px] bg-gradient-to-l from-transparent to-[hsl(280,24%,45%)]" />
+          </div>
+
+          {/* Two Business Highlights */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-16 max-w-4xl mx-auto">
+            {/* Cleaning */}
+            <div className="group flex items-center gap-4 px-8 py-5 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_8px_24px_rgba(107,76,122,0.2)] hover:-translate-y-1">
+              <div className="w-14 h-14 bg-gradient-to-br from-[hsl(280,20%,78%)] to-[hsl(280,24%,45%)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Sparkles className="w-7 h-7 text-white" />
+              </div>
+              <div className="text-left">
+                <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)] mb-1">Commercial Cleaning</h3>
+                <p className="text-[hsl(280,28%,35%)] text-sm">Professional • Reliable • Trusted</p>
+              </div>
+            </div>
+
+            {/* Candles */}
+            <div className="group flex items-center gap-4 px-8 py-5 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 hover:shadow-[0_8px_24px_rgba(212,165,184,0.3)] hover:-translate-y-1">
+              <div className="w-14 h-14 bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Flame className="w-7 h-7 text-white" />
+              </div>
+              <div className="text-left">
+                <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)] mb-1">Handmade Candles</h3>
+                <p className="text-[hsl(280,28%,35%)] text-sm">Artisan • Natural • Aromatic</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Call to Action Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
               href="/cleaning"
-              className="group relative bg-white rounded-2xl p-10 shadow-[0_8px_24px_rgba(107,76,122,0.15)] hover:shadow-[0_16px_48px_rgba(107,76,122,0.25)] transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+              className="group inline-flex items-center justify-center bg-[hsl(280,24%,45%)] text-white px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(107,76,122,0.4)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
             >
-              {/* Shine effect overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              </div>
-
-              <div className="relative">
-                <div className="flex justify-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[hsl(280,20%,78%)] to-[hsl(280,24%,45%)] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
-                    <Sparkles className="w-10 h-10 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-3xl font-bold text-[hsl(280,35%,18%)] mb-4 group-hover:text-[hsl(280,24%,45%)] transition-colors duration-300">
-                  Commercial Cleaning
-                </h3>
-                <p className="text-lg text-[hsl(280,28%,35%)] leading-relaxed mb-6">
-                  Professional cleaning services for offices, retail spaces, and commercial properties.
-                </p>
-                <div className="inline-flex items-center text-[hsl(280,24%,45%)] font-semibold text-lg group-hover:gap-3 transition-all duration-300">
-                  <span>Learn More</span>
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
-                </div>
-              </div>
+              <span>Explore Cleaning</span>
+              <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
             </Link>
 
-            {/* Candles Card */}
             <Link
               href="/candles"
-              className="group relative bg-white rounded-2xl p-10 shadow-[0_8px_24px_rgba(107,76,122,0.15)] hover:shadow-[0_16px_48px_rgba(107,76,122,0.25)] transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+              className="group inline-flex items-center justify-center bg-gradient-to-r from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] text-[hsl(280,35%,18%)] px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(212,165,184,0.5)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
             >
-              {/* Shine effect overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-              </div>
-
-              <div className="relative">
-                <div className="flex justify-center mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-500">
-                    <Flame className="w-10 h-10 text-[hsl(280,24%,45%)]" />
-                  </div>
-                </div>
-                <h3 className="text-3xl font-bold text-[hsl(280,35%,18%)] mb-4 group-hover:text-[hsl(340,35%,75%)] transition-colors duration-300">
-                  Handmade Candles
-                </h3>
-                <p className="text-lg text-[hsl(280,28%,35%)] leading-relaxed mb-6">
-                  Artisan candles hand-poured with premium ingredients and delightful scents.
-                </p>
-                <div className="inline-flex items-center text-[hsl(340,35%,75%)] font-semibold text-lg group-hover:gap-3 transition-all duration-300">
-                  <span>Shop Now</span>
-                  <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
-                </div>
-              </div>
+              <span>Shop Candles</span>
+              <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
             </Link>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+            <span className="text-[hsl(280,28%,35%)] text-sm font-medium">Scroll to explore</span>
+            <div className="w-6 h-10 border-2 border-[hsl(280,28%,35%)] rounded-full flex items-start justify-center p-2">
+              <div className="w-1 h-2 bg-[hsl(280,28%,35%)] rounded-full animate-bounce" />
+            </div>
           </div>
         </div>
       </section>
