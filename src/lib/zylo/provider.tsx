@@ -49,25 +49,37 @@ export function ZyloProvider({ children }: ZyloProviderProps) {
       return;
     }
 
-    // Boot the client on mount
-    client
-      .boot()
-      .then(() => {
+    // Boot the client on mount with comprehensive error handling
+    const bootClient = async () => {
+      try {
+        await client.boot();
         setTokenStatus(client.getTokenStatus());
         setIsLoading(false);
         console.log('✅ Zylo Provider: Client booted successfully');
-      })
-      .catch((err) => {
+      } catch (err) {
         console.warn('⚠️ Zylo Provider: Boot failed, continuing without authentication', err);
         // Don't block the app - just warn and continue
-        setError(err);
+        // Set a user-friendly error but don't throw
+        setError(err instanceof Error ? err : new Error('Failed to connect to authentication service'));
         setIsLoading(false);
-      });
+      }
+    };
+
+    // Use a try-catch wrapper to ensure no errors escape
+    bootClient().catch((err) => {
+      console.error('❌ Zylo Provider: Unexpected error during boot', err);
+      setError(new Error('Authentication service unavailable'));
+      setIsLoading(false);
+    });
 
     // Cleanup: clear timers on unmount
     return () => {
-      if (client) {
-        client.cleanup();
+      try {
+        if (client) {
+          client.cleanup();
+        }
+      } catch (err) {
+        console.warn('⚠️ Zylo Provider: Error during cleanup', err);
       }
     };
   }, [client]);

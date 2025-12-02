@@ -42,35 +42,48 @@ export class ZyloClient {
   async boot(): Promise<void> {
     console.log('🚀 Zylo Client: Booting...');
 
-    // Proactively ensure tenant_users table exists (non-blocking)
-    this.ensureTenantUsersTableExists().catch((error) => {
-      console.warn('⚠️ Zylo Client: Failed to ensure tenant_users table exists', error);
-      // Don't fail boot if this fails - defensive checks in services will handle it
-    });
-
-    // Try to restore token from storage first
-    const stored = this.loadStoredToken();
-    if (stored && !this.isTokenExpired(stored.expiry)) {
-      console.log('✅ Zylo Client: Restored token from storage');
-      await this.setToken(stored.token, null);
-      this.currentTokenType = stored.type;
-      this.tokenExpiry = stored.expiry;
-      this.scheduleReexchange();
-      return;
-    }
-
-    // Try to get scoped anon token from CP
     try {
-      const tokenResponse = await this.exchangeForScopedAnonToken();
-      await this.setToken(tokenResponse.access_token, tokenResponse.expires_in);
-      this.currentTokenType = 'SCOPED_ANON';
-      this.scheduleReexchange();
-      console.log('✅ Zylo Client: Using SCOPED_ANON token');
+      // Proactively ensure tenant_users table exists (non-blocking)
+      this.ensureTenantUsersTableExists().catch((error) => {
+        console.warn('⚠️ Zylo Client: Failed to ensure tenant_users table exists', error);
+        // Don't fail boot if this fails - defensive checks in services will handle it
+      });
+
+      // Try to restore token from storage first
+      const stored = this.loadStoredToken();
+      if (stored && !this.isTokenExpired(stored.expiry)) {
+        console.log('✅ Zylo Client: Restored token from storage');
+        await this.setToken(stored.token, null);
+        this.currentTokenType = stored.type;
+        this.tokenExpiry = stored.expiry;
+        this.scheduleReexchange();
+        return;
+      }
+
+      // Try to get scoped anon token from CP
+      try {
+        const tokenResponse = await this.exchangeForScopedAnonToken();
+        await this.setToken(tokenResponse.access_token, tokenResponse.expires_in);
+        this.currentTokenType = 'SCOPED_ANON';
+        this.scheduleReexchange();
+        console.log('✅ Zylo Client: Using SCOPED_ANON token');
+      } catch (error) {
+        console.warn('⚠️ Zylo Client: CP unavailable, falling back to SUPABASE_ANON_KEY', error);
+        await this.setToken(this.config.supabaseAnonKey, null);
+        this.currentTokenType = 'FALLBACK_ANON';
+        this.scheduleUpgradeAttempt();
+      }
     } catch (error) {
-      console.warn('⚠️ Zylo Client: CP unavailable, falling back to SUPABASE_ANON_KEY', error);
-      await this.setToken(this.config.supabaseAnonKey, null);
-      this.currentTokenType = 'FALLBACK_ANON';
-      this.scheduleUpgradeAttempt();
+      // Comprehensive error handling - ensure boot never throws
+      console.error('❌ Zylo Client: Critical boot error, using fallback mode', error);
+      try {
+        await this.setToken(this.config.supabaseAnonKey, null);
+        this.currentTokenType = 'FALLBACK_ANON';
+      } catch (fallbackError) {
+        console.error('❌ Zylo Client: Even fallback failed', fallbackError);
+        // At this point, we've done everything we can
+        throw new Error('Failed to initialize authentication client');
+      }
     }
   }
 
@@ -198,17 +211,38 @@ export class ZyloClient {
       body.projectId = this.config.projectId;
     }
 
-    const res = await fetch(`${this.config.controlPlaneUrl}${endpoint}`, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(body),
-    });
+    try {
+      const res = await fetch(`${this.config.controlPlaneUrl}${endpoint}`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(body),
+        // Add timeout to prevent hanging
+        signal: AbortSignal.timeout(10000), // 10 second timeout
+      });
 
-    if (!res.ok) {
-      throw new Error(`CP /api/supabase/boot failed: ${res.status} ${res.statusText}`);
+      if (!res.ok) {
+        let errorDetails = '';
+        try {
+          const errorBody = await res.json();
+          errorDetails = errorBody.error || errorBody.message || JSON.stringify(errorBody);
+        } catch {
+          errorDetails = await res.text();
+        }
+        throw new Error(
+          `CP /api/supabase/boot failed: ${res.status} ${res.statusText}. Details: ${errorDetails}`
+        );
+      }
+
+      return await res.json();
+    } catch (error) {
+      if (error instanceof Error) {
+        if (error.name === 'AbortError' || error.name === 'TimeoutError') {
+          throw new Error('CP /api/supabase/boot timed out after 10 seconds');
+        }
+        throw error;
+      }
+      throw new Error('CP /api/supabase/boot failed with unknown error');
     }
-
-    return await res.json();
   }
 
   /**
