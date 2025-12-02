@@ -28,14 +28,14 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(280,20%,95%)]/70 via-[hsl(280,20%,95%)]/60 to-transparent" />
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto text-center py-24 md:py-32 fade-in">
+        <div className="relative max-w-7xl mx-auto text-center pt-32 pb-24 md:pt-40 md:pb-32 fade-in">
           {/* Main Title */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[hsl(280,35%,18%)] mb-8 leading-[1.1] tracking-tight">
             Excellence in<br />Every Detail
           </h1>
 
           {/* Subtitle */}
-          <p className="text-2xl md:text-3xl lg:text-4xl text-[hsl(280,28%,35%)] mb-12 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-lg md:text-xl lg:text-2xl text-[hsl(280,28%,35%)] mb-12 max-w-4xl mx-auto leading-relaxed font-light">
             From spotless commercial spaces to handcrafted candles,<br className="hidden md:block" />
             we bring quality and care to everything we do
           </p>
@@ -73,7 +73,7 @@ export default function Index() {
           </div>
 
           {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
             <Link
               href="/cleaning"
               className="group inline-flex items-center justify-center bg-[hsl(280,24%,45%)] text-white px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(107,76,122,0.4)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
