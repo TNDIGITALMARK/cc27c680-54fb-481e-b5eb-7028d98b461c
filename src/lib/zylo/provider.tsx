@@ -27,7 +27,8 @@ export function ZyloProvider({ children }: ZyloProviderProps) {
       return new ZyloClient(config);
     } catch (error) {
       console.error('Failed to initialize Zylo Client:', error);
-      throw error;
+      // Don't throw - return null and handle gracefully
+      return null;
     }
   });
 
@@ -41,6 +42,13 @@ export function ZyloProvider({ children }: ZyloProviderProps) {
   });
 
   useEffect(() => {
+    // If client failed to initialize, don't try to boot
+    if (!client) {
+      setError(new Error('Zylo Client configuration is incomplete. The app will continue without authentication.'));
+      setIsLoading(false);
+      return;
+    }
+
     // Boot the client on mount
     client
       .boot()
@@ -50,19 +58,24 @@ export function ZyloProvider({ children }: ZyloProviderProps) {
         console.log('✅ Zylo Provider: Client booted successfully');
       })
       .catch((err) => {
-        console.error('❌ Zylo Provider: Boot failed', err);
+        console.warn('⚠️ Zylo Provider: Boot failed, continuing without authentication', err);
+        // Don't block the app - just warn and continue
         setError(err);
         setIsLoading(false);
       });
 
     // Cleanup: clear timers on unmount
     return () => {
-      client.cleanup();
+      if (client) {
+        client.cleanup();
+      }
     };
   }, [client]);
 
   // Update token status periodically for debugging
   useEffect(() => {
+    if (!client) return;
+
     const interval = setInterval(() => {
       setTokenStatus(client.getTokenStatus());
     }, 10000); // Every 10 seconds
@@ -70,32 +83,9 @@ export function ZyloProvider({ children }: ZyloProviderProps) {
     return () => clearInterval(interval);
   }, [client]);
 
-  // Show error state
-  if (error) {
-    return (
-      <div
-        style={{
-          padding: '20px',
-          margin: '20px',
-          backgroundColor: '#fee',
-          border: '1px solid #fcc',
-          borderRadius: '8px',
-          color: '#c33',
-        }}
-      >
-        <h2 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: 'bold' }}>
-          Zylo Client Error
-        </h2>
-        <p style={{ margin: '0', fontSize: '14px' }}>{error.message}</p>
-        <details style={{ marginTop: '10px', fontSize: '12px' }}>
-          <summary style={{ cursor: 'pointer' }}>Stack Trace</summary>
-          <pre style={{ marginTop: '10px', fontSize: '11px', overflow: 'auto' }}>
-            {error.stack}
-          </pre>
-        </details>
-      </div>
-    );
-  }
+  // Show error state - but don't block the app, just render children
+  // The error is logged to console and available in context
+  // Components that need auth will handle it gracefully
 
   // Provide client to children
   return (

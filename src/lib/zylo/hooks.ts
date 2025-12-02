@@ -8,12 +8,15 @@ import { SupabaseClient } from '@supabase/supabase-js';
 /**
  * Hook to access the Zylo Client instance
  *
- * @throws Error if used outside ZyloProvider
+ * @throws Error if used outside ZyloProvider or if client failed to initialize
  */
 export function useZylo(): ZyloClient {
   const context = useContext(ZyloContext);
   if (!context) {
     throw new Error('useZylo must be used within ZyloProvider');
+  }
+  if (!context.client) {
+    throw new Error('Zylo Client failed to initialize. Check environment variables and console for errors.');
   }
   return context.client;
 }

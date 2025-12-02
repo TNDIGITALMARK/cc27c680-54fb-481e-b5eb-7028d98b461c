@@ -50,7 +50,7 @@ export interface AuthUser {
  * React context value
  */
 export interface ZyloContextValue {
-  client: any; // Will be ZyloClient but avoiding circular ref
+  client: any | null; // Will be ZyloClient but avoiding circular ref, can be null if init failed
   isLoading: boolean;
   error: Error | null;
   tokenStatus: TokenStatus;
