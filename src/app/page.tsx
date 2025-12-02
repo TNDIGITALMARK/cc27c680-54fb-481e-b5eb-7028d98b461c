@@ -12,7 +12,7 @@ export default function Index() {
 
       {/* Hero Section with Beautiful Background Image */}
       <section
-        className="relative h-screen w-full flex items-center justify-center px-4 overflow-hidden"
+        className="relative h-screen w-full flex items-center justify-center px-4 pt-32 pb-32 md:pt-40 md:pb-40 overflow-hidden"
         style={{
           backgroundImage: 'url(/generated/hero-background.png)',
           backgroundSize: 'cover',
@@ -28,7 +28,7 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-br from-[hsl(280,20%,95%)]/70 via-[hsl(280,20%,95%)]/60 to-transparent" />
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto text-center pt-32 pb-24 md:pt-40 md:pb-32 fade-in">
+        <div className="relative max-w-7xl mx-auto text-center fade-in">
           {/* Main Title */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-[hsl(280,35%,18%)] mb-8 leading-[1.1] tracking-tight">
             Excellence in<br />Every Detail
