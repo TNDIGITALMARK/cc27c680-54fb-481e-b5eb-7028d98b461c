@@ -78,7 +78,7 @@ export default function CleaningPage() {
 
       {/* Hero Section */}
       <section
-        className="relative py-24 px-4 overflow-hidden"
+        className="relative py-24 px-4 overflow-hidden on-dark-bg"
         style={{
           background: 'linear-gradient(135deg, hsl(280, 20%, 78%) 0%, hsl(280, 24%, 45%) 100%)',
         }}
@@ -88,12 +88,12 @@ export default function CleaningPage() {
         <div className="relative max-w-7xl mx-auto">
           <div className="max-w-3xl">
             <div className="flex items-center space-x-3 mb-6">
-              <Sparkles className="w-12 h-12 text-white" />
-              <h1 className="text-5xl md:text-6xl font-bold text-white">
+              <Sparkles className="w-12 h-12 text-light-primary" />
+              <h1 className="text-5xl md:text-6xl font-bold text-light-primary">
                 Grannys Commercial Cleaning
               </h1>
             </div>
-            <p className="text-2xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-2xl text-light-secondary mb-8 leading-relaxed">
               Professional cleaning services you can trust. We maintain spotless commercial spaces
               with dedication and attention to detail.
             </p>
@@ -106,7 +106,7 @@ export default function CleaningPage() {
               </a>
               <a
                 href="tel:5551234567"
-                className="bg-white/10 backdrop-blur-sm border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all text-center"
+                className="bg-white/10 backdrop-blur-sm border-2 border-white text-light-primary px-8 py-4 rounded-full font-semibold hover:bg-white/20 transition-all text-center"
               >
                 Call (555) 123-4567
               </a>
@@ -272,23 +272,23 @@ export default function CleaningPage() {
 
       {/* Service Areas */}
       <section
-        className="py-20 px-4"
+        className="py-20 px-4 on-dark-bg"
         style={{
           background: 'linear-gradient(135deg, hsl(280, 20%, 78%) 0%, hsl(280, 24%, 45%) 100%)',
         }}
       >
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl font-bold text-light-primary mb-4">
             Service Areas
           </h2>
-          <p className="text-xl text-white/90 mb-12">
+          <p className="text-xl text-light-secondary mb-12">
             Proudly serving businesses throughout the metro area.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {serviceAreas.map((area, index) => (
               <div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 text-white font-medium hover:bg-white/20 transition-colors"
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 text-light-primary font-medium hover:bg-white/20 transition-colors"
               >
                 {area}
               </div>

@@ -507,3 +507,65 @@ img {
     padding-bottom: 8rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   LIGHT TEXT CLASSES FOR DARK BACKGROUNDS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Primary light text - for main headings on dark backgrounds */
+.text-light-primary {
+  color: hsl(0, 0%, 100%);
+}
+
+/* Secondary light text - for body text on dark backgrounds */
+.text-light-secondary {
+  color: hsl(0, 0%, 95%);
+  opacity: 0.95;
+}
+
+/* Muted light text - for subtle text on dark backgrounds */
+.text-light-muted {
+  color: hsl(0, 0%, 90%);
+  opacity: 0.8;
+}
+
+/* Light text with high contrast for readability */
+.text-light-contrast {
+  color: hsl(0, 0%, 100%);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Light text with soft shadow for better legibility */
+.text-light-shadow {
+  color: hsl(0, 0%, 100%);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Light text for links on dark backgrounds */
+.text-light-link {
+  color: hsl(340, 45%, 85%);
+}
+
+.text-light-link:hover {
+  color: hsl(0, 0%, 100%);
+}
+
+/* Utility class for ensuring text is readable on any dark background */
+.on-dark-bg {
+  color: hsl(0, 0%, 100%);
+}
+
+.on-dark-bg h1,
+.on-dark-bg h2,
+.on-dark-bg h3,
+.on-dark-bg h4,
+.on-dark-bg h5,
+.on-dark-bg h6 {
+  color: hsl(0, 0%, 100%);
+}
+
+.on-dark-bg p,
+.on-dark-bg span,
+.on-dark-bg div {
+  color: hsl(0, 0%, 95%);
+}

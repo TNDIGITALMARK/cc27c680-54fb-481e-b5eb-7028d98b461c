@@ -12,12 +12,13 @@ export default function Index() {
 
       {/* Hero Section with Beautiful Background Image */}
       <section
-        className="relative min-h-[90vh] flex items-center justify-center px-4 overflow-hidden"
+        className="relative h-screen w-full flex items-center justify-center px-4 overflow-hidden"
         style={{
           backgroundImage: 'url(/generated/hero-background.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
         }}
       >
         {/* Overlay for better text readability */}
