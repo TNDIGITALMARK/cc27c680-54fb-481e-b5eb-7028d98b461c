@@ -12,7 +12,7 @@ export default function Index() {
 
       {/* Hero Section with Beautiful Background Image */}
       <section
-        className="relative min-h-screen w-full flex items-center justify-center px-4 pt-40 pb-48 md:pt-48 md:pb-56 lg:pt-56 lg:pb-64 overflow-hidden"
+        className="relative min-h-screen w-full flex items-center justify-center px-4 pt-32 pb-32 md:pt-36 md:pb-36 lg:pt-40 lg:pb-40 overflow-hidden"
         style={{
           backgroundImage: 'url(/generated/hero-background.png)',
           backgroundSize: 'cover',
