@@ -179,6 +179,43 @@ export default function CleaningPage() {
               </div>
             ))}
           </div>
+
+          {/* Services Not Provided Notice */}
+          <div className="mt-8 bg-[hsl(280,20%,95%)] border-l-4 border-[hsl(280,24%,45%)] rounded-lg p-6">
+            <p className="text-[hsl(280,28%,35%)] text-center">
+              <strong className="text-[hsl(280,35%,18%)]">Please note:</strong> We do not provide garbage removal services. Our focus is on professional cleaning and maintenance of your commercial space.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Availability Schedule */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="bg-gradient-to-br from-[hsl(280,20%,78%)] to-[hsl(280,24%,45%)] rounded-2xl p-8 shadow-lg">
+            <div className="flex items-center justify-center mb-4">
+              <Clock className="w-8 h-8 text-light-primary mr-3" />
+              <h3 className="text-3xl font-bold text-light-primary">
+                Service Availability
+              </h3>
+            </div>
+            <p className="text-xl text-light-secondary mb-6">
+              We're open for cleaning services Monday through Friday
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 max-w-3xl mx-auto">
+              {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
+                <div
+                  key={day}
+                  className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg py-3 px-2 text-light-primary font-medium"
+                >
+                  {day}
+                </div>
+              ))}
+            </div>
+            <p className="text-light-secondary mt-6 text-lg">
+              Contact us to schedule your cleaning service during our operating days
+            </p>
+          </div>
         </div>
       </section>
 

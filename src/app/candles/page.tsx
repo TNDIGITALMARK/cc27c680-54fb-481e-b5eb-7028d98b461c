@@ -1,7 +1,7 @@
 import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 import { CandlePlaceholder } from '@/components/candle-placeholder';
-import { Flame, Heart, Gift, ShoppingBag, Star, Clock, Sparkles } from 'lucide-react';
+import { Flame, Heart, Gift, ShoppingBag, Star, Clock, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -106,7 +106,7 @@ export default function CandlesPage() {
               </h1>
             </div>
             <p className="text-2xl text-[hsl(280,28%,35%)] mb-8 leading-relaxed">
-              Artisan candles lovingly hand-poured with premium soy wax and carefully selected fragrances.
+              Artisan candles lovingly hand-poured with premium bee wax and organic soy wax, both available with beautiful fragrances.
               Each candle brings warmth, beauty, and ambiance to your space.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -127,6 +127,121 @@ export default function CandlesPage() {
         </div>
       </section>
 
+      {/* Availability Schedule */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] rounded-2xl p-8 shadow-lg">
+            <div className="flex items-center justify-center mb-4">
+              <Clock className="w-8 h-8 text-[hsl(280,24%,45%)] mr-3" />
+              <h3 className="text-3xl font-bold text-[hsl(280,35%,18%)]">
+                Available Every Day
+              </h3>
+            </div>
+            <p className="text-xl text-[hsl(280,28%,35%)] mb-6">
+              Shop our handmade candles Monday through Sunday
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-7 gap-2 max-w-4xl mx-auto">
+              {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
+                <div
+                  key={day}
+                  className="bg-white border border-[hsl(280,24%,45%)]/30 rounded-lg py-3 px-2 text-[hsl(280,24%,45%)] font-medium text-sm md:text-base"
+                >
+                  {day}
+                </div>
+              ))}
+            </div>
+            <p className="text-[hsl(280,28%,35%)] mt-6 text-lg">
+              Contact us anytime to place your candle order or schedule a pickup
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Wax Types Section */}
+      <section
+        className="py-20 px-4"
+        style={{
+          background: 'linear-gradient(180deg, hsl(340, 45%, 95%) 0%, hsl(340, 45%, 88%) 100%)',
+        }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-[hsl(280,35%,18%)] mb-4">
+              Premium Wax Options
+            </h2>
+            <p className="text-xl text-[hsl(280,28%,35%)]">
+              Choose your preferred wax type - all available with beautiful fragrances
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Bee Wax */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[hsl(45,85%,75%)] to-[hsl(40,80%,65%)] rounded-full flex items-center justify-center">
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)]">
+                  Bee Wax Candles
+                </h3>
+              </div>
+              <p className="text-[hsl(280,28%,35%)] mb-4 leading-relaxed">
+                Natural bee wax candles that purify the air as they burn. Rich, golden color with a subtle honey aroma that complements any fragrance.
+              </p>
+              <ul className="space-y-2">
+                {[
+                  ' 100% natural bee wax',
+                  'Air-purifying properties',
+                  'Long, clean burn',
+                  'Available with fragrance oils',
+                  'Golden, natural appearance',
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-center space-x-2 text-[hsl(280,28%,35%)]">
+                    <CheckCircle2 className="w-4 h-4 text-[hsl(45,85%,55%)] flex-shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Organic Soy Wax */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] rounded-full flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-[hsl(280,24%,45%)]" />
+                </div>
+                <h3 className="text-2xl font-bold text-[hsl(280,35%,18%)]">
+                  Organic Soy Wax Candles
+                </h3>
+              </div>
+              <p className="text-[hsl(280,28%,35%)] mb-4 leading-relaxed">
+                Premium organic soy wax that burns cleaner and longer. Eco-friendly and sustainable, perfect for carrying our signature fragrances.
+              </p>
+              <ul className="space-y-2">
+                {[
+                  '100% organic soy wax',
+                  'Eco-friendly & biodegradable',
+                  'Excellent scent throw',
+                  'Available with fragrance oils',
+                  'Creamy, smooth appearance',
+                ].map((feature, index) => (
+                  <li key={index} className="flex items-center space-x-2 text-[hsl(280,28%,35%)]">
+                    <CheckCircle2 className="w-4 h-4 text-[hsl(340,35%,75%)] flex-shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-10 text-center">
+            <p className="text-lg text-[hsl(280,28%,35%)] bg-white rounded-full px-8 py-4 inline-block shadow-md">
+              <strong className="text-[hsl(280,35%,18%)]">Both wax types</strong> are available with our complete range of signature fragrances
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Qualities */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -141,7 +256,7 @@ export default function CandlesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Sparkles, title: 'Premium Soy Wax', description: 'Clean-burning, eco-friendly soy wax blend' },
+              { icon: Sparkles, title: 'Premium Wax Options', description: 'Choose from bee wax or organic soy wax, both with fragrance' },
               { icon: Clock, title: 'Long Burn Time', description: 'Up to 65 hours of beautiful fragrance' },
               { icon: Heart, title: 'Hand-Poured', description: 'Each candle crafted with care and attention' },
               { icon: Gift, title: 'Perfect Gifts', description: 'Beautiful packaging for any occasion' },
