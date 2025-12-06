@@ -8,59 +8,127 @@ export const dynamic = 'force-dynamic';
 // Mock data for candle products
 const candleCollections = [
   {
-    name: 'Classic Collection',
-    price: '$18',
-    size: '8oz jar',
-    burnTime: '45 hours',
-    scents: ['Vanilla Dreams', 'Lavender Sunset', 'Cinnamon Spice', 'Ocean Breeze', 'Coffee House', 'Fresh Linen'],
+    name: 'Gift Basket',
+    price: '$45.00',
+    size: 'Complete Set',
+    burnTime: 'Multi-item set',
+    items: ['Candle', 'Face mask', 'Wax melts', 'Lotion', 'Hotel size shampoo & conditioner', 'Puff'],
+    scents: [],
+    isBasket: true,
   },
   {
-    name: 'Luxury Collection',
-    price: '$35',
-    size: '12oz vessel',
-    burnTime: '65 hours',
-    scents: ['Amber & Sandalwood', 'Rose Garden', 'Cedar & Sage', 'Midnight Jasmine'],
+    name: 'Candle Two-Pack Special',
+    price: '$35.00',
+    size: '8oz jars (2 pack)',
+    burnTime: '45 hours each',
+    priceNote: 'plus tax',
+    scents: [
+      'Bee-wax Snicker doodler',
+      'Creamy vanilla',
+      'Sweet raccoon & pine',
+      'Pumpkin pie',
+      'Coffee',
+      'Cafe latte',
+      'Vanilla',
+      'Janine',
+      'American organic coconut',
+      'Jasmine Rosa',
+      'Lavender gingerbread',
+      'Creamy vanilla'
+    ],
   },
   {
-    name: 'Travel Tins',
-    price: '$12',
-    size: '4oz tin',
-    burnTime: '20 hours',
-    scents: ['Vanilla Dreams', 'Lavender Sunset', 'Ocean Breeze', 'Fresh Linen'],
+    name: 'Wax Melts - 3 Pack',
+    price: '$25.00',
+    size: '3 packs',
+    burnTime: '24+ hours per pack',
+    priceNote: 'plus tax',
+    scents: [
+      'Bee-wax Snicker doodler',
+      'Creamy vanilla',
+      'Sweet raccoon & pine',
+      'Pumpkin pie',
+      'Coffee',
+      'Cafe latte',
+      'Vanilla',
+      'Janine',
+    ],
+  },
+  {
+    name: 'Wax Melts - 2 Pack',
+    price: '$10.00',
+    size: '2 packs',
+    burnTime: '24+ hours per pack',
+    priceNote: 'plus tax',
+    scents: [
+      'Bee-wax Snicker doodler',
+      'Creamy vanilla',
+      'Sweet raccoon & pine',
+      'Pumpkin pie',
+      'Coffee',
+      'Cafe latte',
+      'Vanilla',
+      'Janine',
+    ],
   },
 ];
 
 // Signature scents details
 const signatureScents = [
   {
-    name: 'Vanilla Dreams',
-    description: 'Warm vanilla with hints of caramel and cream - our bestseller',
-    notes: ['Sweet vanilla', 'Rich caramel', 'Creamy undertones'],
+    name: 'Bee-wax Snicker doodler',
+    description: 'Sweet snickerdoodle cookie scent made with natural bee wax',
+    notes: ['Cinnamon sugar', 'Butter cookie', 'Natural honey'],
   },
   {
-    name: 'Lavender Sunset',
-    description: 'Calming lavender blended with soft florals for ultimate relaxation',
-    notes: ['French lavender', 'Light florals', 'Subtle musk'],
+    name: 'Creamy vanilla',
+    description: 'Rich, smooth vanilla that fills your space with warmth',
+    notes: ['Madagascar vanilla', 'Sweet cream', 'Soft musk'],
   },
   {
-    name: 'Cinnamon Spice',
-    description: 'Cozy cinnamon warmth perfect for any season',
-    notes: ['Ceylon cinnamon', 'Clove', 'Warm spices'],
+    name: 'Sweet raccoon & pine',
+    description: 'Unique blend of sweet woodland notes with fresh pine',
+    notes: ['Pine needles', 'Sweet woods', 'Forest floor'],
   },
   {
-    name: 'Ocean Breeze',
-    description: 'Fresh and clean marine scent that brings the coast to your home',
-    notes: ['Sea salt', 'Fresh air', 'Driftwood'],
+    name: 'Pumpkin pie',
+    description: 'Classic autumn favorite with warm spices and pumpkin',
+    notes: ['Pumpkin puree', 'Cinnamon', 'Nutmeg'],
   },
   {
-    name: 'Coffee House',
-    description: 'Rich espresso and roasted coffee beans for coffee lovers',
-    notes: ['Fresh espresso', 'Roasted beans', 'Vanilla cream'],
+    name: 'Coffee',
+    description: 'Bold, fresh coffee aroma perfect for morning ambiance',
+    notes: ['Fresh coffee', 'Dark roast', 'Espresso'],
   },
   {
-    name: 'Fresh Linen',
-    description: 'Clean and crisp like freshly laundered linens',
-    notes: ['Clean cotton', 'Fresh air', 'Soft musk'],
+    name: 'Cafe latte',
+    description: 'Smooth espresso blended with steamed milk sweetness',
+    notes: ['Espresso', 'Steamed milk', 'Vanilla cream'],
+  },
+  {
+    name: 'Vanilla',
+    description: 'Classic pure vanilla - timeless and comforting',
+    notes: ['Pure vanilla', 'Warm sugar', 'Creamy base'],
+  },
+  {
+    name: 'Janine',
+    description: 'Signature custom blend - floral and sophisticated',
+    notes: ['White florals', 'Soft musk', 'Light citrus'],
+  },
+  {
+    name: 'American organic coconut',
+    description: 'Tropical coconut scent made with organic ingredients',
+    notes: ['Fresh coconut', 'Coconut cream', 'Tropical breeze'],
+  },
+  {
+    name: 'Jasmine Rosa',
+    description: 'Elegant blend of jasmine and rose petals',
+    notes: ['Jasmine flowers', 'Rose petals', 'Green leaves'],
+  },
+  {
+    name: 'Lavender gingerbread',
+    description: 'Unique pairing of calming lavender with spicy gingerbread',
+    notes: ['French lavender', 'Ginger spice', 'Molasses'],
   },
 ];
 
@@ -313,27 +381,61 @@ export default function CandlesPage() {
                         <ShoppingBag className="w-4 h-4" />
                         <span>{collection.size}</span>
                       </span>
-                      <span className="flex items-center space-x-2">
-                        <Clock className="w-4 h-4" />
-                        <span>{collection.burnTime} burn time</span>
-                      </span>
+                      {!collection.isBasket && (
+                        <span className="flex items-center space-x-2">
+                          <Clock className="w-4 h-4" />
+                          <span>{collection.burnTime}</span>
+                        </span>
+                      )}
                     </div>
                   </div>
-                  <div className="mt-4 md:mt-0">
+                  <div className="mt-4 md:mt-0 text-right">
                     <p className="text-4xl font-bold text-[hsl(280,24%,45%)]">
                       {collection.price}
                     </p>
-                    <p className="text-sm text-[hsl(280,28%,35%)]">per candle</p>
+                    {collection.priceNote && (
+                      <p className="text-sm text-[hsl(280,28%,35%)]">{collection.priceNote}</p>
+                    )}
+                    {!collection.priceNote && !collection.isBasket && (
+                      <p className="text-sm text-[hsl(280,28%,35%)]">per item</p>
+                    )}
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                  {collection.scents.map((scent, scentIndex) => (
-                    <div key={scentIndex} className="group cursor-pointer">
-                      <CandlePlaceholder scent={scent} className="mb-2 group-hover:scale-105 transition-transform" />
+                {collection.isBasket && collection.items && (
+                  <div className="mb-6">
+                    <h4 className="text-lg font-semibold text-[hsl(280,35%,18%)] mb-3">
+                      Basket Includes:
+                    </h4>
+                    <ul className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                      {collection.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-center space-x-2">
+                          <CheckCircle2 className="w-4 h-4 text-[hsl(340,35%,75%)] flex-shrink-0" />
+                          <span className="text-[hsl(280,28%,35%)]">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {!collection.isBasket && collection.scents.length > 0 && (
+                  <div>
+                    <h4 className="text-lg font-semibold text-[hsl(280,35%,18%)] mb-4">
+                      Available Scents:
+                    </h4>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                      {collection.scents.map((scent, scentIndex) => (
+                        <div key={scentIndex} className="group cursor-pointer">
+                          <div className="bg-gradient-to-br from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] rounded-lg p-4 hover:shadow-md transition-all">
+                            <p className="text-sm text-[hsl(280,35%,18%)] font-medium text-center">
+                              {scent}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
