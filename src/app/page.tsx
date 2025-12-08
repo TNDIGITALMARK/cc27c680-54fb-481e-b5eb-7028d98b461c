@@ -72,24 +72,6 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link
-              href="/cleaning"
-              className="group inline-flex items-center justify-center bg-[hsl(280,24%,45%)] text-light-primary px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(107,76,122,0.4)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
-            >
-              <span>Explore Cleaning</span>
-              <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
-            </Link>
-
-            <Link
-              href="/candles"
-              className="group inline-flex items-center justify-center bg-gradient-to-r from-[hsl(340,45%,85%)] to-[hsl(340,35%,75%)] text-[hsl(280,35%,18%)] px-10 py-5 rounded-full hover:shadow-[0_12px_32px_rgba(212,165,184,0.5)] transition-all hover:-translate-y-1 font-semibold text-lg min-w-[240px]"
-            >
-              <span>Shop Candles</span>
-              <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
-            </Link>
-          </div>
         </div>
       </section>
 
