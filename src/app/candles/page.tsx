@@ -683,8 +683,8 @@ export default function CandlesPage() {
 
               <p className="text-center text-sm text-[hsl(280,28%,35%)]">
                 Or email us at{' '}
-                <a href="mailto:candles@luckycharma.com" className="text-[hsl(340,35%,75%)] font-medium hover:underline">
-                  candles@luckycharma.com
+                <a href="mailto:Queenbee2026dr@mail.com" className="text-[hsl(340,35%,75%)] font-medium hover:underline">
+                  Queenbee2026dr@mail.com
                 </a>
               </p>
             </div>

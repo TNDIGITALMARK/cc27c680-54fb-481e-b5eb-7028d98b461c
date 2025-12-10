@@ -37,13 +37,13 @@ export function Footer() {
                 <span className="font-medium">(555) 123-4567</span>
               </a>
               <a
-                href="mailto:cleaning@grannys.com"
+                href="mailto:Queenbee2026dr@mail.com"
                 className="flex items-center space-x-3 text-light-secondary hover:text-light-primary transition-colors group/link"
               >
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover/link:bg-white/20 transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="font-medium">cleaning@grannys.com</span>
+                <span className="font-medium">Queenbee2026dr@mail.com</span>
               </a>
               <div className="flex items-center space-x-3 text-light-muted">
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
@@ -76,13 +76,13 @@ export function Footer() {
                 <span className="font-medium">(555) 765-4321</span>
               </a>
               <a
-                href="mailto:candles@luckycharma.com"
+                href="mailto:Queenbee2026dr@mail.com"
                 className="flex items-center space-x-3 text-light-secondary hover:text-light-primary transition-colors group/link"
               >
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover/link:bg-white/20 transition-colors">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="font-medium">candles@luckycharma.com</span>
+                <span className="font-medium">Queenbee2026dr@mail.com</span>
               </a>
               <div className="flex items-center space-x-3 text-light-muted">
                 <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">

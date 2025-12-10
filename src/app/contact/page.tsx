@@ -112,7 +112,7 @@ export default function ContactPage() {
                   </a>
 
                   <a
-                    href="mailto:cleaning@grannys.com"
+                    href="mailto:Queenbee2026dr@mail.com"
                     className="group/link flex items-center space-x-4 p-4 bg-white rounded-xl hover:bg-[hsl(280,20%,98%)] transition-all duration-300 hover:shadow-md"
                   >
                     <div className="w-12 h-12 bg-[hsl(280,20%,95%)] rounded-lg flex items-center justify-center group-hover/link:bg-[hsl(280,24%,45%)] transition-colors">
@@ -120,7 +120,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm text-[hsl(280,28%,35%)] font-medium">Email Us</p>
-                      <p className="text-lg font-bold text-[hsl(280,35%,18%)]">cleaning@grannys.com</p>
+                      <p className="text-lg font-bold text-[hsl(280,35%,18%)]">Queenbee2026dr@mail.com</p>
                     </div>
                   </a>
 
@@ -183,7 +183,7 @@ export default function ContactPage() {
                   </a>
 
                   <a
-                    href="mailto:candles@luckycharma.com"
+                    href="mailto:Queenbee2026dr@mail.com"
                     className="group/link flex items-center space-x-4 p-4 bg-white rounded-xl hover:bg-[hsl(340,45%,98%)] transition-all duration-300 hover:shadow-md"
                   >
                     <div className="w-12 h-12 bg-[hsl(340,45%,95%)] rounded-lg flex items-center justify-center group-hover/link:bg-[hsl(340,35%,75%)] transition-colors">
@@ -191,7 +191,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="text-sm text-[hsl(280,28%,35%)] font-medium">Email Us</p>
-                      <p className="text-lg font-bold text-[hsl(280,35%,18%)]">candles@luckycharma.com</p>
+                      <p className="text-lg font-bold text-[hsl(280,35%,18%)]">Queenbee2026dr@mail.com</p>
                     </div>
                   </a>
 
